@@ -56,25 +56,12 @@ def senddraw():
     size = Select(driver.find_element_by_id('selectSize'))
     # select.select_by_visible_text('240')
     try:
-        size.select_by_value('46')
+        size.select_by_value('46').click()
     except:
-        size.select_by_value('35')
+        size.select_by_value('35').click()
 
 
-    time.sleep(3)
-    driver.find_element_by_xpath('//*[@id="btn-buy"]').click()
-
-def testbuy():
-    time.sleep(1)
-    size = driver.find_element_by_xpath('//selectSize[@data-value="235"]')
-    # select.select_by_visible_text('240')
-    # try:
-    #     size.select_by_value('46')
-    # except:
-    #     size.select_by_value('35')
-    size.click()
-
-    time.sleep(0.5)
+    time.sleep(2)
     driver.find_element_by_xpath('//*[@id="btn-buy"]').click()
 
 print("-----------------계정1--------------------------")
@@ -84,7 +71,7 @@ getdraw()
 sendID1()
 time.sleep(2)
 try:
-    testbuy() ,print("ENTRY SUCCESS!")
+    senddraw() ,print("ENTRY SUCCESS!")
 except:
     print("FAIL TO ENTRY")
 
